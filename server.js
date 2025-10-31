@@ -19,6 +19,9 @@ console.log("Mongo db URI :::", process.env.MONGO_URI);
 app.use(cors());
 app.use(express.json());
 app.use(logger);
+app.get("/", (req, res) => {
+  res.send("Welcome to Deployment!");
+});
 app.use("/api/todos", todoRouter);
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
